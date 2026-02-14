@@ -50,17 +50,14 @@ if __name__ == "__main__":
         content = f.read()
 
     stratagems = parse_content(content)
-    print(f"Found: {len(stratagems)}!")
     filtered_stratagems = []
     for s in stratagems:
         if len(s.name) == 0:
             continue
         elif len(s.arrows) == 0:
             continue
+        s.name = s.name.replace('"', '\\"')
         filtered_stratagems.append(s)
 
-    # Stratagem::new("Orbital Precision Strike".to_string(), vec![Binding::Right,Binding::Right,Binding::Up]),
-    with open('stratagems.json', 'w') as f:
-
-        strats = [f"Stratagem::new(\"{s.name}\".to_string(), vec![{','.join([f"Binding::{k}" for k in s.arrows])}])" for s in filtered_stratagems]
-        f.write(',\n'.join(strats))
+    strats = [f"Stratagem::new(\"{s.name}\".to_string(), vec![{','.join([f"Binding::{k}" for k in s.arrows])}])" for s in filtered_stratagems]
+    print(",\n".join(strats))
