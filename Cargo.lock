@@ -3,7 +3,7 @@
 version = 4
 
 [[package]]
-name = "helldivers_common"
+name = "hellthrower_common"
 version = "1.0.0"
 dependencies = [
  "serde",

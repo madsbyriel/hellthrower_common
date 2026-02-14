@@ -1,7 +1,14 @@
 [package]
-name = "helldivers_common"
+name = "hellthrower_common"
 version = "1.0.0"
 edition = "2024"
+authors = ["Mads Hvid Byriel <madshbyriel@gmail.com>"]
+description = "Hellthrower Common"
+license = "MIT"
+repository = "https://github.com/madsbyriel/hellthrower_common"
+homepage = "https://github.com/madsbyriel/hellthrower_common"
+categories = []
+readme = "README.md"
 
 [dependencies]
 serde = { version = "1.0.228", features = ["derive"] }
