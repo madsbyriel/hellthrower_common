@@ -6,8 +6,6 @@ cd "$(dirname '$0')"
 
 curl https://helldivers.wiki.gg/wiki/Stratagems > stratagems.html
 
-source venv/bin/activate
-
 cat > src/stratagems.rs << 'EOF'
 use serde::{Deserialize, Serialize};
 
